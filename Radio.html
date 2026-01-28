@@ -1,0 +1,180 @@
+<html>
+<script>
+
+	var timer0=0;
+	var timer1=0;
+	var timer1tag=0;
+	
+	function timer1ontimer(){
+		const t=new Date();
+		const s=t.getSeconds();
+		const h=t.getHours();
+		const m=t.getMinutes();
+		timedisplayobject.innerHTML=h+":"+(m<10?'0':'')+m+":"+(s<10?'0':'')+s;
+		if(timer1tag<0){
+			clearInterval(timer1);timer1=0;
+			timedisplayobject.innerHTML=(h<13?h:h-12)+":"+(m<10?'0':'')+m+" "+(h<12?'a.m.':'p.m.');			
+		}else{
+			timer1tag++;
+		}
+	}
+
+	function timer0continue(a){
+		//clearInterval(timer0);timer0=0;
+		document.all("waitb"+a).hidden=true;		
+		document.all("line"+a).style.color="black";
+		if(a==2){
+			timer1tag=-1;
+			timer1ontimer();
+		}
+		if(a==4){
+			document.all("backgm3").play();
+		}
+		if(a==5){
+			document.all("mediasfx"+a).volume=0.4;	
+		}
+	}
+	
+	function playbutton(a,timer){
+		if(timer0){ clearTimeout(timer0);timer0=0;}
+//		if(a!=4){
+			var audios = document.getElementsByTagName('audio');
+			for (var i = audios.length - 1; i >= 0; i--) {
+					audios[i].pause();
+					if(a!=4 || audios[i].id!="backgm3") audios[i].currentTime=0;
+			}
+//		}
+		for (var i = 8; i >= 1; i--) {
+			//ob=document.all("mediasfx"+i); ob.pause(); ob.currentTime=0; 
+			document.all("waitb"+i).hidden=true;
+			document.all("line"+i).style.color="silver";
+		}
+		document.all("waitb"+a).hidden=false;
+		document.all("mediasfx"+a).play();
+		timer0=setTimeout(timer0continue,timer,a);		
+		if(!timer1){ // restart the current time clock
+			timer1tag=0;
+			timer1=setInterval(timer1ontimer,1000);timer1ontimer();
+		}
+	}
+	
+</script>
+
+<body style="overscrollBehaviorY=none;"> <!-- ==================================== -->
+
+<div style="font-size:55px;color:silver"><b>
+	<!--p style="text-align:center"><!--img src="radio_progressbar.gif"-->LKY Radio Station</p-->
+	<hr>
+	<i style="color:red">Dj1:</i><br>
+	<button onclick="playbutton(1,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx1" src="radio_jingle_main.mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
+								<img id="waitb1" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line1">Good morning Lee Kau Yan, today is <span id="datedisplayobject">Wednesday, 28 January 2026</span>. You are listening to Lee Kau Yan RADIO Station. I'm <i>DJ ______</i> and this is your time check:</span>
+	<br>
+	<button onclick="playbutton(2,3500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx2" src="radio_time_check_beep.wav" onplay='this.volume=1;document.all("backgm2").play();' hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
+		<audio controls id="backgm2" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.00;" hidden>Audio not supported!</audio>
+								<img id="waitb2" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>WAIT</blink-->
+								<span id="line2">
+									The time now is <span id="timedisplayobject">a.m.</span><br>
+									Now, let's look at the weather.
+								</span>
+	<hr>
+	<i style="color:red">Dj2:</i><br>
+	<button onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.4;" hidden>Audio not supported!</audio>
+								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line3">
+									Good morning, I'm <i>DJ ______</i> and the weather today is mainly cloudy. Cool with one or two light rain patches in the morning. The minimum temperature will be about 16 degrees Celsius in the urban areas.
+								</span>
+	<button onclick="playbutton(4,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx4" src="radio_weather_thunder.wav" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+								<img id="waitb4" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line4">
+									<hr>
+									<i style="color:red">Dj1:</i><br>
+									In the New Territories it will be colder but with Sunny periods during the day and a maximum temperature of around 21 degrees of Celsius.<br>
+									Now on to the news...
+								</span>
+	<button onclick="playbutton(5,14250);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx5" src="radio_news_music_start_(Enerider).mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
+								<img id="waitb5" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line5">
+									<hr>
+									<i style="color:red">Dj2:</i><br>
+									Following the high-energy opening night of their world tour in Hong Kong, BLACKPINK's Lisa made a low-key visit to Che Kung Temple in Sha Tin dressed in pink, while Rose delighted fans by her culinary exploration. The blonde vocalist captivated the packed arena by tasting the Hong Kong's classic egg waffles and charming the audience with greetings in Cantonese.
+								</span>
+	<button onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx6" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
+								<img id="waitb6" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line6">
+									<hr>
+									<i style="color:red">Dj1:</i><br>
+									In other news: Around 170 secondary schools in Hong Kong will offer Japanese, Korean, French and other languages as electives for junior form students. This initiative is part of a pilot scheme that provides each school with 250 thousand Hong Kong dollars in subsidies over the next two academic years.
+								</span>
+	<button onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
+								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line7">
+									<hr>
+									<i style="color:red">Dj2:</i><br>
+									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
+								</span>
+	<button onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
+								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line8"></span>
+	<hr>
+	
+	<div hidden>
+	<hr>
+	<button onclick="playbutton(3,100);" style="width:80;height:80;font-size:50px"><b>&#x2016</b></button>
+	<audio controls id="jingle0" src="radio_weather_thunder.wav" onplay="this.volume=1;" hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
+	<audio controls id="backgm0" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.05;" hidden>Audio not supported!</audio>
+	<img id="waitb0" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>wait</blink-->
+	<span id="line0">news</span>
+	<button onclick="playbutton(3,100);" style="width:80;height:80;font-size:50px"><b>&#x0399&#x0399</b></button>
+	<audio controls id="jingle0" src="radio_weather_thunder.wav" onplay="this.volume=1;" hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
+	<audio controls id="backgm0" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.05;" hidden>Audio not supported!</audio>
+	<img id="waitb0" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>wait</blink-->
+	<span id="line0">advert</span>
+	</div>
+	
+</div>
+
+</body> <!-- ==================================== -->
+
+<script>
+
+	var timedisplayobject=document.all("timedisplayobject");
+	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
+
+	function playerinitiated(){
+		window.event.srcElement.controls=false;
+		if(!document.all("bell").controls && !document.all("music").controls && !document.all("horn").controls && !document.all("cheer").controls){
+			if(!document.all("players").hidden){
+				document.all("bell").pause();document.all("bell").currentTime=0;
+				document.all("music").pause();document.all("music").currentTime=0;
+				document.all("horn").pause();document.all("horn").currentTime=0;
+				document.all("cheer").pause();document.all("cheer").currentTime=0;
+			}
+			document.all("players").hidden=true;
+			document.all("main").hidden=false;
+		}
+	}
+
+	(function() {		// this is a universal "blinker" for any & all "blink" tags:  (which the neckbeards "deprecated")
+		var visibility = 'hidden';
+		var blinks = document.getElementsByTagName('blink');
+		window.setInterval(function() {
+			for (var i = blinks.length - 1; i >= 0; i--) {
+				blinks[i].style.visibility = visibility;
+			}
+			visibility = (visibility === 'visible') ? 'hidden' : 'visible';
+		}, 500);
+	})();
+
+</script>
+
+</html>
