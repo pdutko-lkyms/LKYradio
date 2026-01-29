@@ -31,7 +31,7 @@
 			document.all("backgm3").play();
 		}
 		if(a==5){
-			document.all("mediasfx"+a).volume=0.4;	
+			document.all("mediasfx"+a).volume=0.6;	
 		}
 	}
 	
@@ -69,7 +69,7 @@
 	<button onclick="playbutton(1,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx1" src="radio_jingle_main.mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
 								<img id="waitb1" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line1">Good morning Lee Kau Yan, today is <span id="datedisplayobject">Wednesday, 28 January 2026</span>. You are listening to Lee Kau Yan RADIO Station. I'm <i>DJ ______</i> and this is your time check:</span>
+								<span id="line1">Good morning Lee Kau Yan, today is <span id="datedisplayobject">Friday, 30 January 2026</span>. You are listening to Lee Kau Yan RADIO Station.<br>I'm <i>DJ ______</i> and this is your time check:</span>
 	<br>
 	<button onclick="playbutton(2,3500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx2" src="radio_time_check_beep.wav" onplay='this.volume=1;document.all("backgm2").play();' hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
@@ -83,10 +83,10 @@
 	<i style="color:red">Dj2:</i><br>
 	<button onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.4;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.6;" hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
-									Good morning, I'm <i>DJ ______</i> and the weather today is mainly cloudy. Cool with one or two light rain patches in the morning. The minimum temperature will be about 16 degrees Celsius in the urban areas.
+									Good morning, I'm <i>DJ ______</i> <span id="text1"></span>
 								</span>
 	<button onclick="playbutton(4,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx4" src="radio_weather_thunder.wav" onplay='this.volume=1;' hidden>Audio not supported!</audio>
@@ -94,7 +94,7 @@
 								<span id="line4">
 									<hr>
 									<i style="color:red">Dj1:</i><br>
-									In the New Territories it will be colder but with Sunny periods during the day and a maximum temperature of around 21 degrees of Celsius.<br>
+									<span id="text2"></span><br>
 									Now on to the news...
 								</span>
 	<button onclick="playbutton(5,14250);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
@@ -103,7 +103,7 @@
 								<span id="line5">
 									<hr>
 									<i style="color:red">Dj2:</i><br>
-									Following the high-energy opening night of their world tour in Hong Kong, BLACKPINK's Lisa made a low-key visit to Che Kung Temple in Sha Tin dressed in pink, while Rose delighted fans by her culinary exploration. The blonde vocalist captivated the packed arena by tasting the Hong Kong's classic egg waffles and charming the audience with greetings in Cantonese.
+									<span id="text3"></span>
 								</span>
 	<button onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx6" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
@@ -111,7 +111,7 @@
 								<span id="line6">
 									<hr>
 									<i style="color:red">Dj1:</i><br>
-									In other news: Around 170 secondary schools in Hong Kong will offer Japanese, Korean, French and other languages as electives for junior form students. This initiative is part of a pilot scheme that provides each school with 250 thousand Hong Kong dollars in subsidies over the next two academic years.
+									In other news: <span id="text4"></span>
 								</span>
 	<button onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=1;" hidden>Audio not supported!</audio>
@@ -149,6 +149,20 @@
 
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
+	// Good morning, I'm DJ ______
+	document.all("text1").innerHTML="and the weather today will be mainly cloudy with one or two rain patches. Temperatures will range between 17 and 20 degrees of Celsius. Fresh easterly winds, occasionally strong off shore and on high ground. A strong airstream is affecting the coast of Hong Kong while a broad band of clouds is covering the northeastern part of South China Sea.";
+	document.all("text2").innerHTML="Winds will become northerly tomorrow and it will get quite cool at night. The minimum temperatures will be about 14 to 15 degrees of Celsius in the urban areas in the following couple of days, and a few degrees lower in the New Territories. There will be some sunny periods.";
+	// Now on to the news...
+	document.all("text3").innerHTML="Gladys West, whose work helped lead to the creation of GPS, has died at age 95. Ms. West, a Black mathematician and computer programmer, grew up working on a farm in Virginia, USA. Her efforts for the US Navy helped make GPS possible. But until recent years, very few people actually knew of her work.";
+	// In other news:
+	document.all("text4").innerHTML="On 25th of January, rock climber Alex Honnold became the first person to climb Taiwan’s Taipei 101 skyscraper without using any safety equipment. The 508-meter climb took the American about an hour and a half to complete. The event was shown live on the internet.";
+	// That's all for today...
+/*	document.all("text5").innerHTML="";
+	document.all("text6").innerHTML="";
+	document.all("text7").innerHTML="";
+	document.all("text8").innerHTML="";
+	document.all("text9").innerHTML="";
+*/
 
 	function playerinitiated(){
 		window.event.srcElement.controls=false;
