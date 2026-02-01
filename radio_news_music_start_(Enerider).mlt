@@ -4,8 +4,8 @@
   <playlist id="main_bin">
     <property name="xml_retain">1</property>
   </playlist>
-  <producer id="black" in="00:00:00.000" out="00:00:26.120">
-    <property name="length">00:00:26.160</property>
+  <producer id="black" in="00:00:00.000" out="00:01:00.360">
+    <property name="length">00:01:00.400</property>
     <property name="eof">pause</property>
     <property name="resource">0</property>
     <property name="aspect_ratio">1</property>
@@ -14,7 +14,7 @@
     <property name="set.test_audio">0</property>
   </producer>
   <playlist id="background">
-    <entry producer="black" in="00:00:00.000" out="00:00:26.120"/>
+    <entry producer="black" in="00:00:00.000" out="00:01:00.360"/>
   </playlist>
   <producer id="producer0" in="00:00:00.000" out="00:01:01.800">
     <property name="length">00:01:01.840</property>
@@ -30,23 +30,45 @@
     <property name="global_feed">1</property>
     <property name="shotcut:caption">radio_news_music_(Enerider).mp3</property>
     <property name="xml">was here</property>
-    <filter id="filter0" in="00:00:01.440" out="00:00:27.560">
+  </producer>
+  <producer id="producer1" in="00:00:00.000" out="00:01:01.800">
+    <property name="length">00:01:01.840</property>
+    <property name="eof">pause</property>
+    <property name="resource">c:/Pauly/English Ambassadors/Radio/radio_news_music_(Enerider).mp3</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="creation_time">2010-06-02T02:47:38</property>
+    <property name="shotcut:hash">56f24c9e7fed8dc8ece636b96d14b8a6</property>
+    <property name="global_feed">1</property>
+    <property name="shotcut:caption">radio_news_music_(Enerider).mp3</property>
+    <property name="xml">was here</property>
+    <filter id="filter0" in="00:00:26.920" out="00:01:01.800">
       <property name="window">75</property>
       <property name="max_gain">20dB</property>
-      <property name="level">00:00:15.880=0;00:00:26.120=-60</property>
+      <property name="level">00:00:08.200=0;00:00:34.880=-60</property>
       <property name="mlt_service">volume</property>
       <property name="shotcut:filter">fadeOutVolume</property>
-      <property name="shotcut:animOut">257</property>
+      <property name="shotcut:animOut">668</property>
+    </filter>
+    <filter id="filter1" in="00:00:26.920" out="00:01:01.800">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">-8.9</property>
+      <property name="mlt_service">volume</property>
     </filter>
   </producer>
   <playlist id="playlist0">
     <property name="shotcut:audio">1</property>
     <property name="shotcut:name">A1</property>
-    <entry producer="producer0" in="00:00:01.440" out="00:00:27.560"/>
+    <entry producer="producer0" in="00:00:01.440" out="00:00:26.880"/>
+    <entry producer="producer1" in="00:00:26.920" out="00:01:01.800"/>
   </playlist>
-  <tractor id="tractor0" title="Shotcut version 20.09.27" global_feed="1" in="00:00:00.000" out="00:00:26.120">
+  <tractor id="tractor0" title="Shotcut version 20.09.27" global_feed="1" in="00:00:00.000" out="00:01:00.360">
     <property name="shotcut">1</property>
-    <property name="shotcut:scaleFactor">3.01223</property>
+    <property name="shotcut:scaleFactor">0.847513</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">0</property>
     <track producer="background"/>
