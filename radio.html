@@ -74,9 +74,9 @@
 
 <body style="overscrollBehaviorY=none;"> <!-- ==================================== -->
 
-<div style="font-size:55px; color:silver">
+<div style="font-size:50px; color:silver">
 	<div style="text-align:center"> <!-- using the "paragraph" tag <p> will cause extra space below the paragraph (empty line) -->
-		<img src="radio_logo.png" width=50% alt="LKY Radio Station">
+		<img src="radio_logo.png" width=75% alt="LKY Radio Station">
 		<audio controls src="SFX radio.mp3" onplay="this.volume=1;" hidden></audio>
 	</div>
 	<div style="text-align:center; font-size:18px; color:black">
@@ -89,7 +89,7 @@
 	<button id="btn1" onclick="playbutton(1,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx1" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
 									<img id="waitb1" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line1">Good morning Lee Kau Yan, today is <span id="datedisplayobject">Friday, 30th of January 2026</span>. You are listening to Lee Kau Yan RADIO Station.<br>I'm <i>DJ ______</i> and this is your time check:</span>
+								<span id="line1">Good morning Lee Kau Yan, today is <span id="datedisplayobject">Friday, 30th of January 2026</span>.<br>You are listening to Lee Kau Yan Radio Station. I'm <i>DJ ______</i> and this is your time check:</span>
 	<br>
 	<button id="btn2" onclick="playbutton(2,3500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx2" src="radio_time_check_beep.wav" onplay='this.volume=1;document.all("backgm2").play();' hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
@@ -171,12 +171,12 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML=". It has been cloudy overnight. The minimum temperature today will be about 13 degrees of Celsius in the urban areas, and it will be even colder in the New Territories.";
-	document.all("text2").innerHTML="However the weather will turn mostly fine later, that means possibly sunny, and dry during the day, with a maximum temperature of around 19 degrees of Celsius. There may be some winds from the north.";
+	document.all("text1").innerHTML=". There will be sunny periods today and warm, relatively humid temperatures of up to 22 degrees Celsius. In the following couple of days it will be windier with temperatures falling progressively over the weekend.";
+	document.all("text2").innerHTML="A fresh to strong easterly airstream will affect the coast of Guangdong today and tomorrow, it will remain cool in the morning easterly winds and the weather will be relatively humid over the coast of southern china. The northeast monsoon is expected to reach the coast during the weekend.";
 	// Now on to the news...
-	document.all("text3").innerHTML="Ocean temperatures rise storing heat from global warming. Scientists have been tracking the huge iceberg called A23a that has been the world's largest iceberg for 40 years. It used to be bright white color like the snow on top of it but a satellite photo from 26th of December 2025 shows it turning blue because it is melting into a giant pool of water. According to a new report, the world's oceans have heated up by more than 3 degrees of Celsius in the past eight years.";
+	document.all("text3").innerHTML="On Sunday, a group of thieves used a truck with a ladder on it to get into the Louvre museum in Paris. They then broke into display cases and stole several important items from the French crown jewels. So far, no one has been arrested.";
 	// In other news:
-	document.all("text4").innerHTML="Have you ever wondered if your dog can really understand what you say? Scientists have long known that some dogs can learn the names of their toys. Now, a recent study shows that these dogs can even learn the names of new toys just by listening to people talk about them. This is a skill that young children have, but dogs usually don't.";
+	document.all("text4").innerHTML="Two brothers - Ian and Stuart Paton from UK - set a new world record for the heaviest pumpkin ever grown. The champion pumpkin beat the old world record by about 32 kilograms. It also set a new record for its size, measuring over 6.4 meters around.";
 	// That's all for today...
 /*	document.all("text5").innerHTML="";
 	document.all("text6").innerHTML="";
