@@ -43,7 +43,7 @@
 			document.all("backgm3").play();
 		}
 		if(a==5){
-			document.all("mediasfx"+a).volume=0.5;	
+			document.all("mediasfx"+a).volume=0.4;	
 		}
 	}
 	
@@ -93,7 +93,7 @@
 	<br>
 	<button id="btn2" onclick="playbutton(2,3500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx2" src="radio_time_check_beep.wav" onplay='this.volume=1;document.all("backgm2").play();' hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
-		<audio controls id="backgm2" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.00;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm2" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0;" hidden>Audio not supported!</audio>
 								<img id="waitb2" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>WAIT</blink-->
 								<span id="line2">
 									The time now is <span id="timedisplayobject">a.m.</span><br>
@@ -103,7 +103,7 @@
 	<i style="color:red">Dj2:</i><br>
 	<button id="btn3" onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.5;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.4;" hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
 									Good morning, I'm <i>DJ ______</i> <span id="text1"></span>
@@ -171,12 +171,12 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML=". There will be sunny periods today and warm, relatively humid temperatures of up to 22 degrees Celsius. In the following couple of days it will be windier with temperatures falling progressively over the weekend.";
-	document.all("text2").innerHTML="A fresh to strong easterly airstream will affect the coast of Guangdong today and tomorrow, it will remain cool in the morning easterly winds and the weather will be relatively humid over the coast of southern china. The northeast monsoon is expected to reach the coast during the weekend.";
+	document.all("text1").innerHTML="and it will be warm and sunny today. Coastal mist in the morning and a minimum temperature of about 18 degrees Celsius in the urban areas, and a couple of degrees lower in the New Territories. Sunny intervals during the day will reach a maximum temperature of around 24 degrees Celsius. There will be moderate easterly winds.";
+	document.all("text2").innerHTML="A tropical depression over the ocean east of the Philippines was centred about 1360 kilometres east-southeast of Manila at 4 p.m. yesterday. The possible typhoon is forecast to move west-southwest at about 20 kilometres per hour towards the central Philippines.";
 	// Now on to the news...
-	document.all("text3").innerHTML="On Sunday, a group of thieves used a truck with a ladder on it to get into the Louvre museum in Paris. They then broke into display cases and stole several important items from the French crown jewels. So far, no one has been arrested.";
+	document.all("text3").innerHTML="Is seeing believing? 'A.I.' videos look extremely real. Over the last year or so, the quality of 'A.I.'-generated videos has become so good that it's extremely difficult to tell whether a video is real or not. An English TV channel recently ran a show about 'A.I.'. At the end of the episode, the 'woman' presenting the show suddenly announced that she wasn't real.";
 	// In other news:
-	document.all("text4").innerHTML="Two brothers - Ian and Stuart Paton from UK - set a new world record for the heaviest pumpkin ever grown. The champion pumpkin beat the old world record by about 32 kilograms. It also set a new record for its size, measuring over 6.4 meters around.";
+	document.all("text4").innerHTML="International Space Station celebrates 25 years of people living in space. On the 2nd of November in the year 2000, three astronauts became the first full-time workers at the International Space Station built by USA, Russia, Europe, Japan and Canada, that orbits the Earth 15 times a day, 400 kilometres high. Since then, the ISS has never been empty. As the largest space station ever constructed, it primarily serves scientific experiments.";
 	// That's all for today...
 /*	document.all("text5").innerHTML="";
 	document.all("text6").innerHTML="";
