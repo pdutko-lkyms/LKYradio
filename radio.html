@@ -43,7 +43,7 @@
 			document.all("backgm3").play();
 		}
 		if(a==5){
-			document.all("mediasfx"+a).volume=0.3;
+			document.all("mediasfx"+a).volume=0.35;
 		}
 	}
 	
@@ -103,7 +103,7 @@
 	<i style="color:red">Dj2:</i><br>
 	<button id="btn3" onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.3;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
 									Good morning, I'm <i>DJ ______</i> <span id="text1"></span>
@@ -146,6 +146,7 @@
 								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line8"></span>
 	<hr>
+	<audio controls id="mediasfx8" src="radio_test_beep.mp3" onplay="this.volume=1;" loop>Audio not supported!</audio>
 	
 	<div hidden>
 	<hr>
@@ -171,12 +172,12 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML="There may be coastal mist in the morning and at night, but the minimum temperature will be about 19 degrees Celsius, warm and sunny during the day. The maximum temperature may rise up to 25 degrees Celsius, however, it is expected to get significantly colder by the end of the weekend.";
-	document.all("text2").innerHTML="Typhoon Penha is now less than 1000 kilometres southeast of Manila and it is moving slightly faster today at 25 kilometres per hour west-northwest towards the Philippines.";
+	document.all("text1").innerHTML="Today will be cloudy with daytime temperatures between 16 and 21 degrees Celsius. There will be more sun tomorrow and even warmer up to 24 degrees Celsius.";
+	document.all("text2").innerHTML="Yes, this week will see sunny and warm weather, so it looks like winter will finally end soon, however, that's when the rainy weather will start in spring.";
 	// Now on to the news...
-	document.all("text3").innerHTML="A study from December 2025 suggests the planet Neptune may be more rocky than previously thought, challenging the traditional 'ice giant' classification. James Webb Space Telescope has made new, detailed infrared images of Neptune's rings and auroras. Research indicates that Neptune's atmospheric temperatures have decreased over the last 17 years, and its clouds are linked to solar cycles.";
+	document.all("text3").innerHTML="An airport in Turkey has an excellent idea: Some people are scared of flying, so at the airport they have dogs who help people feel better while they are waiting to get on the airplane. There are five dogs with special training, so they stay calm and not react to noises. Travelers can touch the dogs and talk to them. They like the dogs very much. The airport may get five more dogs in the future.";
 	// In other news:
-	document.all("text4").innerHTML="A town in Finland has begun using the world's largest 'sand battery' to help provide heat. The unusual method of storing energy allows the town to create heat when electricity prices are cheap, and store it in the sand for long periods of time. The heat can then be used whenever it's needed.";
+	document.all("text4").innerHTML="One of the very popular K-pop groups "aespa" just performed in Hong Kong last weekend as part of their tour across Asia. The concerts were completely sold out showing their strong popularity here. They will be in Macau next month at the Galaxy Arena and then in Indonesia in April.";
 	// That's all for today...
 /*	document.all("text5").innerHTML="";
 	document.all("text6").innerHTML="";
