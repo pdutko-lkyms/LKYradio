@@ -82,7 +82,7 @@
 <div style="font-size:50px; color:silver">
 	<div style="text-align:center"> <!-- using the "paragraph" tag <p> will cause extra space below the paragraph (empty line) -->
 		<img src="radio_logo.png" width=75% alt="LKY Radio Station">
-		<!--audio controls src="SFX radio.mp3" onplay="this.volume=1;" hidden></audio-->
+		<!--audio controls src="SFX radio.mp3" onplay="this.volume=1;" hidden></audio-->1
 	</div>
 	<div style="text-align:center; font-size:18px; color:black">
 		<b>Press</b> the "Play" buttons for music and sound effects, <b><i>WAIT,</i></b><br>
@@ -92,14 +92,17 @@
 	<b>
 	<i style="color:red">Dj1:</i><br>
 	<button id="btn1" onclick="playbutton(1,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx1" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
-								<img id="waitb1" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line1">Good morning Lee Kau Yan, today is <span id="datedisplayobject">Friday, 30th of January 2026</span>.<br>You are listening to Lee Kau Yan Radio Station. I'm <i>DJ ______</i> and this is your time check:</span>
+	<audio controls id="mediasfx1" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.8; WORKS TOO BUT "this" SEEMS CLEANER -->
+								<img id="waitb1" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>WAIT</blink-->
+								<span id="line1">
+									Good morning
+									Lee Kau Yan, today is <span id="datedisplayobject">Friday, 30th of January 2026</span>.<br>
+									You are listening to Lee Kau Yan Radio Station. I'm <i>DJ ______</i> and this is your time check:
+								</span>
 	<br>
 	<button id="btn2" onclick="playbutton(2,3500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx2" src="radio_time_check_beep.wav" onplay='this.volume=1;document.all("backgm2").play();' hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.5; WORKS TOO BUT "this" SEEMS CLEANER -->
-		<audio controls id="backgm2" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0;" hidden>Audio not supported!</audio>
-								<img id="waitb2" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>WAIT</blink-->
+	<audio controls id="mediasfx2" src="radio_time_check_beep.wav" onplay="this.volume=1;" hidden>Audio not supported!</audio>
+								<img id="waitb2" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line2">
 									The time now is <span id="timedisplayobject">a.m.</span><br>
 									Now, let's look at the weather.
