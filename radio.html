@@ -131,17 +131,19 @@
 								</span>
 	<button id="btn5" onclick="playbutton(5,14250);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx5" src="radio_news_music_start_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm5" src="radio_news_music_(freesound).mp3" onplay="this.volume=0.3;" loop hidden>Audio not supported!</audio>
 								<img id="waitb5" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line5">
 									<hr>
+									<i style="color:red">Dj2:</i><br>									
 									<span id="text3"></span>
 								</span>
 	<button id="btn6" onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx6" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+	<audio controls id="mediasfx6" src="radio_news_music_end_(Enerider).mp3" onplay='this.volume=0.8;document.all("backgm5").play();' hidden>Audio not supported!</audio>
 								<img id="waitb6" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line6">
 									<hr>
-									<i style="color:red">Dj2:</i><br>
+									<i style="color:red">Dj1:</i><br>
 									In other news: <span id="text4"></span>
 								</span>
 	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
@@ -149,7 +151,7 @@
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line7">
 									<hr>
-									<i style="color:red">Dj1:</i><br>
+									<i style="color:red">Dj2:</i><br>
 									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
 								</span>
 	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
@@ -190,12 +192,12 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML="The weather has been quite nice and sunny in the past two weeks, but today it'll start getting cloudy with one or two light rain showers overnight. The minimum temperature will be about 23 degrees Celsius.";
-	document.all("text2").innerHTML="Tomorrow it will be hot and sunny during the day with the maximum temperature around 29 degrees Celsius. The wind will be light to moderate and blowing west. An easterly airstream is affecting the coast of Hong Kong and there may be coastal mist in the morning.";
+	document.all("text1").innerHTML="The weather is brightening up a little despite the northeast monsoon and temperatures are expected to reach 27 degrees Celsius.";
+	document.all("text2").innerHTML="However, the Hong Kong Observatory says it'll get dark and rainy again towards the weekend, so don't hang out your laundry yet.";
 	// Now on to the news...
-	document.all("text3").innerHTML="The Uniform Tests are finally over and Easter holiday is next. We all deserve to have a break from school, would you agree? But what about homework? Well, there's nothing we can do about that sad aspect, but maybe there's a way to cheer up yourself by watching some of the new movies now playing in cinemas: like The SuperMario Galaxy animation, or the Hail Mary science fiction film. And if you like Japanese films, go watch The Keeper of The Camphor Tree or the Kyojo Reunion.";
+	document.all("text3").innerHTML="The Lee Kau Yan Memorial School burglary investigation is still underway. If you have any information on possible suspects of the crime, contact the English Ambassadors office as soon as possible. You must speak to them in English, of course.";
 	// In other news:
-	document.all("text4").innerHTML="Breaking bread. Bread is made from flour and water. People have been eating bread for thousands of years. Jesus broke bread and gave it to his students to eat as his body. Different cultures make their own types of bread. The common bread in Hong Kong is an imported European kind with brown crust and soft white middle. But the closest traditional LOCAL kind would be the 'Ping On Bun'.";
+	document.all("text4").innerHTML="The English department is looking for smart students to help solve detective puzzles and a chance to win prizes in special escape rooms in the New Wing. If you think you're smart enough, go to room N-zero-4 at lunch to register!";
 	// That's all for today...
 /*	document.all("text5").innerHTML="";
 	document.all("text6").innerHTML="";
