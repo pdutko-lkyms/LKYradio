@@ -51,6 +51,9 @@
 		if(a==4){
 			document.all("backgm3").play();
 		}
+		if(a==7){
+			document.all("backgm7").play();
+		}
 		if(a==5){
 			document.all("mediasfx"+a).volume=0.35;
 		}
@@ -65,7 +68,7 @@
 					if(a!=4 || audios[i].id!="backgm3") audios[i].currentTime=0;
 			}
 //		}
-		for (var i = 8; i >= 1; i--) {
+		for (var i = 9; i >= 1; i--) {
 			//ob=document.all("mediasfx"+i); ob.pause(); ob.currentTime=0; 
 			document.all("waitb"+i).hidden=true;
 			document.all("line"+i).style.color="silver";
@@ -115,7 +118,7 @@
 	<i style="color:red">Dj2:</i><br>
 	<button id="btn3" onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" loop hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
 									Good morning, I'm <i>DJ ______</i> <span id="text1"></span>
@@ -143,21 +146,33 @@
 								<img id="waitb6" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line6">
 									<hr>
+									
 									<i style="color:red">Dj1:</i><br>
-									In other news: <span id="text4"></span>
+									<span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+	<button id="btn7" onclick="playbutton(7,7500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+		<audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.15;" hidden>Audio not supported!</audio>
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line7">
 									<hr>
+										
+									<i style="color:red">Dj3:</i><br>
+									<span id="text5"></span>
+								</span>
+	<button id="btn7" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx8" src="radio_news_music_end_(Enerider).mp3" onplay='this.volume=0.8;' hidden>Audio not supported!</audio>
+								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line8">
+									<hr>
+									
 									<i style="color:red">Dj2:</i><br>
 									That's all for now. We are English Ambassadors, thank you for listening and have a nice day.
 								</span>
-	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
-								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line8"></span>
+	<button id="btn8" onclick="playbutton(9,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx9" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+								<img id="waitb9" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line9"></span>
 	<hr>
 	</b>
 	<br><br><br><br><br>
@@ -196,12 +211,11 @@
 	document.all("text2").innerHTML="The current temperature is 26 degrees Celsius and relative humidity is almost 80%, so our athletes will definitely break a sweat. On the other hand, the cloudy conditions have spared us from the heat of the sun to create a quite cool day.";
 	// Now on to the news...
 	document.all("text3").innerHTML="The school Sports Day is going well. This morning started with the boys' 100-meter run in categories F1 and F2. We also have 4 other track & field competitions inside the oval, namely Shot Put, Discus and Javelin, as well as Long Jump and High Jump, of course.";
-	// In other news:
 	document.all("text4").innerHTML="The Blue House leads the race events with 320 points and 3 gold medals in 100-meter sprint. Green House has attained medals in Shot Put and Long Jump, Red House has won 3rd place and 1st place in Javelin and Discus. Yellow House is falling behind, so Form 1 cheerleaders, cheer for them louder because they need to catch up!";
-	// That's all for today...
-/*	document.all("text5").innerHTML="";
-	document.all("text6").innerHTML="";
-	document.all("text7").innerHTML="";
+	document.all("text5").innerHTML="Jokes ...";
+	// That's all for now...
+/*	document.all("text6").innerHTML="";
+	document.all("text7").innerHTML="b";
 	document.all("text8").innerHTML="";
 	document.all("text9").innerHTML="";
 */
