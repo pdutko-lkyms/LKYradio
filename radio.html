@@ -144,15 +144,15 @@
 								<span id="line6">
 									<hr>
 									<i style="color:red">Dj1:</i><br>
-									In other news: <span id="text4"></span>
+									<s>In other news:</s> <span id="text4"></span>
 								</span>
 	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line7">
 									<hr>
-									<i style="color:red">Dj1:</i><br>
-									That's all for today. We are English Ambassadors, thank you for listening and GOOD LUCK at the exams!
+									<i style="color:red">Dj2:</i><br>
+									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
 								</span>
 	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
@@ -192,12 +192,12 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML=". The Hong Kong Observatory says today to be mainly cloudy with even some showers here and there but very hot and sunny at the same time during the day. So...";
-	document.all("text2").innerHTML="The minimum temperature is 29 degrees Celsius, so yes, very hot indeed, and it could go all the way up above 34 degrees and it'll stay that way till the end of the weekend! Then, some rain is predicted next week and temperatures below 30 degrees Celsius - just right for the exams.";
+	document.all("text1").innerHTML=". The Hong Kong Observatory looks kinda gloomy, says weather today is ''mainly cloudy'' and a few showers at night too. But the minimum temperature is about 27 degrees Celsius.";
+	document.all("text2").innerHTML="That's right, despite some light rain today is cheerful and sunny and the maximum temperature is around 32 degrees Celsius. It's a little windy from the north-east.";
 	// Now on to the news...
-	document.all("text3").innerHTML="There's a lot going on in the world: ''A.I.'' platforms like ChatGPT help criminals win lawsuits in USA, there's Ebola on the loose in Africa, Russia's still bullying Ukraine, the new Toy Story 5 movie is about children's addiciton to mobile phones and iPads, and Stephen Curry has signed up for a chinese brand of all...!";
+	document.all("text3").innerHTML="Have you seen the new Spiderman movie? It came out at the end of July, and as you know, Peter Parker lost his girlfriend and his best friend to a magic spell that made everybody in the world forget who he is. So now, he changed his mind! Why wouldn't he, right?";
 	// In other news:
-	document.all("text4").innerHTML="Summer exams start on Friday at Lee Kau Yan Memorial School, and we hope the students are all well-read and ready. Form 1 students start it easy with just Religion and some Chinese history, and Form 3 have it even easier testing their Visual Arts.<br><br><i style='color:red'>Dj2:</i><br>I mean: drawing pictures for the exam? How hard can it be?<br><br><i style='color:red'>Dj1:</i><br>You're right, because Form 2 have to study Maths for Friday, Form 4 have Biology, and Form 5 better be ready for the most difficult exam of ''Chinese'' - Paper 1 AND Paper 2!<br><br><i style='color:red'>Dj2:</i><br>Yup, I do not envy those poor guys...";
+	document.all("text4").innerHTML="Yes, i <i>have</i> seen the movie, and surprisingly, there's no 'A.I.' in it anywhere! I was <i>sure</i> it was going to be the next villain or something. Instead there's this girl who's like Charles Xavier with legs and no wheelchair.";
 	// That's all for today...
 /*	document.all("text5").innerHTML="";
 	document.all("text6").innerHTML="";
