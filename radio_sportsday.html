@@ -52,7 +52,8 @@
 			document.all("backgm3").play();
 		}
 		if(a==7){
-			document.all("backgm7").play();
+			//document.all("backgm7").play();
+			document.all("mediasfx"+a).volume=0.3;
 		}
 		if(a==5){
 			document.all("mediasfx"+a).volume=0.35;
@@ -139,7 +140,7 @@
 								<span id="line5">
 									<hr>
 									<i style="color:red">Dj2:</i><br>									
-									Hi, I'm <i>DJ ______</i>. <span id="text3"></span>
+									<span id="text3"></span>
 								</span>
 	<button id="btn6" onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx6" src="radio_news_music_end_(Enerider).mp3" onplay='this.volume=0.8;document.all("backgm5").play();' hidden>Audio not supported!</audio>
@@ -150,9 +151,9 @@
 									<i style="color:red">Dj1:</i><br>
 									<span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,8000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
-		<audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.3;" hidden>Audio not supported!</audio>
+	<button id="btn7" onclick="playbutton(7,15000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano)+music_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+		<!--audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.25;" hidden>Audio not supported!</audio-->
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line7">
 									<hr>
@@ -170,7 +171,7 @@
 									
 								</span>
 	<button id="btn7" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx8" src="radio_news_music_end_(Enerider).mp3" onplay='this.volume=0.8;' hidden>Audio not supported!</audio>
+	<audio controls id="mediasfx8" src="radio_advert_music_end_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
 								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line8">
 									<hr>
