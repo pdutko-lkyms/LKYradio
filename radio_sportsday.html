@@ -97,7 +97,7 @@
 	</div>
 	<hr>
 	<b>
-	<i style="color:red">Dj3:</i><br>
+	<i style="color:red">Dj1:</i><br>
 	<button id="btn1" onclick="playbutton(1,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx1" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio> <!-- window.event.srcElement.volume=0.8; WORKS TOO BUT "this" SEEMS CLEANER -->
 								<img id="waitb1" src="radio_progressbar.gif" width=100 height=60 hidden> <!--blink>WAIT</blink-->
@@ -128,7 +128,7 @@
 								<img id="waitb4" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line4">
 									<hr>
-									<i style="color:red">Dj3:</i><br>
+									<i style="color:red">Dj1:</i><br>
 									<span id="text2"></span><br>
 									Now on to the news...
 								</span>
@@ -138,7 +138,7 @@
 								<img id="waitb5" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line5">
 									<hr>
-									<i style="color:red">Dj1:</i><br>									
+									<i style="color:red">Dj2:</i><br>									
 									Hi, I'm <i>DJ ______</i>. <span id="text3"></span>
 								</span>
 	<button id="btn6" onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
@@ -147,10 +147,10 @@
 								<span id="line6">
 									<hr>
 									
-									<i style="color:red">Dj2:</i><br>
+									<i style="color:red">Dj1:</i><br>
 									<span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,7500);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<button id="btn7" onclick="playbutton(7,8000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
 		<audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.3;" hidden>Audio not supported!</audio>
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
@@ -158,23 +158,16 @@
 									<hr>
 										
 									<span id="text5">
-									
-										<i style="color:red">Dj3:</i> Why don't we have the sports day in the jungle?<br>
-										<i style="color:red">Dj1:</i> There are too many *cheetahs*!<br><br>
-										<i style="color:red">Dj2:</i> What is the hardest part in skydiving?<br>
-										<i style="color:red">Dj3:</i> The ground.<br><br>
-										<i style="color:red">Dj1:</i> What do you call a boat full of polite football players?<br>
-										<i style="color:red">Dj2:</i> A good sportsman ship.<br><br>
-										<i style="color:red">Dj3:</i> What can you serve but cannot eat?<br>
-										<i style="color:red">Dj1:</i> A volleyball.<br><br>
-										<i style="color:red">Dj2:</i> Why do dogs run in circles?<br>
-										<i style="color:red">Dj3:</i> Because its really hard to run in squares or triangles!<br><br>
-										<i style="color:red">Dj1:</i> <br>I just got a new personal best in the 100-meter run: 73 meters, and then i passed... out!<br><br>
-										<i style="color:red">Dj2:</i> <br>A policeman stopped me and said, “Papers.”<br>And I said, “Scissors, I win!” and I ran away.<br>I think he really wants a re-match because he’s been chasing me for an hour.<br><br>
-										<i style="color:red">Dj3:</i> <br>OK, so “Naked Running” means: no music, no watch, no GPS, no electronics…<br>I wish I knew that five minutes ago!<br><br>
-										<i style="color:red">All DJs:</i> Hahaha!
-									
+										<i style="color:red">Eason:</i> What do runners eat before they race?<br>
+										<i style="color:red">Hayden:</i> Nothing. They fast.<br>
+										<i style="color:red">Dj1 + Dj2:</i> Haha-haha!<br><br>
+										<i style="color:red">Eason:</i> But are *you* looking for the perfect snack to brighten your day?<br>
+										<i style="color:red">Hayden:</i> You should definitely try Hayden's Golden Oreo.<br>
+										<i style="color:red">Eason:</i> It combines a rich vanilla flavor with a crispy, golden biscuit, making every single bite absolutely delicious.<br>
+										<i style="color:red">Hayden:</i> For instance, you can twist it, lick the sweet cream, and dunk it into a warm glass of fresh millk.<br>
+										<i style="color:red">Eason:</i> Don't wait any longer! Buy a pack of Golden Oreos today and share the ultimate happiness with your friends.<br>									
 									</span>
+									
 								</span>
 	<button id="btn7" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx8" src="radio_news_music_end_(Enerider).mp3" onplay='this.volume=0.8;' hidden>Audio not supported!</audio>
@@ -223,12 +216,12 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML="The Hong Kong Observatory said it would be cloudy today and even raining, still citing the 'upper air disturbances'. However, the sun is poking out thru the clouds so unless you want a nasty sunburn, shade or sunblock is prescribed.";
-	document.all("text2").innerHTML="The current temperature is again above 28 degrees Celsius and humidity is high at 80%. We still hope for clear weather at least until we conclude our Sports Day, but a fresh shower doesn't sound so bad, does it?";
+	document.all("text1").innerHTML="Under the influence of the anticyclone now above Canton, the weather there is mainly clear and sunny, but showers are affecting the coast including Hong Kong. Nevertheless, the minimum temperature is about 28 degrees Celsius and the maximum may be as high as 33 degrees in the sun. So stay in shade if you can, or put on sunblock if you must.";
+	document.all("text2").innerHTML="The Severe Typhoon Surigae is still lingering around the islands of Japan, now about 490 kilometres south-southeast of Kagoshima. The typhoon is now strong but slow, moving only about 15 kilometres per hour, predicted to go east-northeast further into the open sea.";
 	// Now on to the news...
-	document.all("text3").innerHTML="The second day of Sports Day started with  the boys' 100-meter run and then 1,500 meters boys and girls. We also have 4 other track & field competitions inside the oval, namely Shot Put, Discus and Javelin, as well as Long Jump and High Jump, of course.";
+	document.all("text3").innerHTML="The school Sports Day is going well. This morning started with the boys' 100-meter run in categories F1 and F2 [and then 1,500 meters boys and girls]. We also have 5 other track & field competitions inside the oval, namely Shot Put, Discus and Javelin, as well as Long Jump and High Jump, of course.";
 	document.all("text4").innerHTML="The Blue House leads the race events with 320 points and 3 gold medals in 100-meter sprint. Green House has attained medals in Shot Put and Long Jump, Red House has won 3rd place and 1st place in Javelin and Discus. Yellow House is falling behind, so Form 1 cheerleaders, cheer for them louder because they need to catch up!";
-	//document.all("text5").innerHTML="Jokes ...";
+	//document.all("text5").innerHTML="Advertisement ...";
 	// That's all for now...
 /*	document.all("text6").innerHTML="";
 	document.all("text7").innerHTML="b";
