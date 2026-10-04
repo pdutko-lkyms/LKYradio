@@ -51,6 +51,10 @@
 		if(a==4){
 			document.all("backgm3").play();
 		}
+		if(a==7){
+			//document.all("backgm7").play();
+			document.all("mediasfx"+a).volume=0.3;
+		}
 		if(a==5){
 			document.all("mediasfx"+a).volume=0.35;
 		}
@@ -65,7 +69,7 @@
 					if(a!=4 || audios[i].id!="backgm3") audios[i].currentTime=0;
 			}
 //		}
-		for (var i = 8; i >= 1; i--) {
+		for (var i = 9; i >= 1; i--) {
 			//ob=document.all("mediasfx"+i); ob.pause(); ob.currentTime=0; 
 			document.all("waitb"+i).hidden=true;
 			document.all("line"+i).style.color="silver";
@@ -115,10 +119,10 @@
 	<i style="color:red">Dj2:</i><br>
 	<button id="btn3" onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" loop hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
-									Good morning, I'm <i>DJ ______</i> <span id="text1"></span>
+									Good morning, I'm <i>DJ ______</i>. <span id="text1"></span>
 								</span>
 	<button id="btn4" onclick="playbutton(4,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx4" src="radio_weather_thunder.wav" onplay='this.volume=1;' hidden>Audio not supported!</audio>
@@ -143,21 +147,37 @@
 								<img id="waitb6" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line6">
 									<hr>
+									
 									<i style="color:red">Dj1:</i><br>
 									In other news: <span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+	<button id="btn7" onclick="playbutton(7,15000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano)+music_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+		<!--audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.25;" hidden>Audio not supported!</audio-->
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<hr>
+								Bobby's advertisement:<br>
 								<span id="line7">
+									<span id="text5">
+
+										<i style="color:red">Bobby:</i> I strongly recommend you to buy the ''Mobile power supply''. If you have it, you will never worry about the mobile power when going out, and it's convenient! For instance, you can buy it at any school tuckshop for just 50 dollars, and it can charge your device up to 80 percent in 20 minutes. You will never have to worry about a dead phone battery on the way home. And then, it's also ultra-light and fits right in your pocket.<br>
+										<i style="color:red">Kivi:</i> Go buy the ''Mobile power supply'' now!<br>
+
+									</span>
+								</span>
+	<button id="btn7" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx8" src="radio_advert_music_end_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line8">
 									<hr>
+									
 									<i style="color:red">Dj2:</i><br>
 									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
 								</span>
-	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
-								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line8"></span>
+	<button id="btn8" onclick="playbutton(9,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx9" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+								<img id="waitb9" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line9"></span>
 	<hr>
 	</b>
 	<br><br><br><br><br>
@@ -192,15 +212,15 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML=". With the monsoon gone after the weekend, the anticyclone now aloft over Hong Kong creates fine, sunny, hot weather that will last especially later next month and after. The typhoon Surigae is moving very slowly around the vicinity of the Ryukyu Islands of Japan and although it is gathering strength, it is expected to turn towards the open sea rather than make landfall.";
-	document.all("text2").innerHTML="Hopefully the weather tomorrow will be fine, perhaps sunny, although many probably wish it wasn't hot. However, the temperature is predicted to be high between 28 and 33 degrees Celsius on Tuesday and even 34 degrees Celsius on Wednesday. So make sure you drink plenty of water to stay hydrated even when sitting in the shade on bleechers. The chance of rain remains low at least until Thursday, when the Hong Kong atmosphere will get a little bleaker.";
+	document.all("text1").innerHTML=". So, despite of what the Hong Kong Observatory said last week, we got quite a shower this weekend! Apparently the ''monsoon'' is back, and they are now saying that upper-air disturbances will bring more more rain instead of fine weather to the coast of Hong Kong.";
+	document.all("text2").innerHTML="Yes, the observatory should improve the accuracy of their predictions because we are also hoping for them to be right about finally cooler temperatures in the next couple of days. It has been really hot last week, and now the minimum temperature is forecast to fall around 23 degrees Celsius, especially at night when the difference between day and night time will be noticeable.";
 	// Now on to the news...
-	document.all("text3").innerHTML="Earlier this month, the United Nations voted 164 against 1 to support a new kind of world map that is designed to show the real sizes of continents and land masses more accurately than the centuries old Mercator projection. The one vote against was from the USA whose land size has been incorrectly shown as more than half of Africa, when it is, in fact, smaller than Brazil.";
-	// In other news:
-	document.all("text4").innerHTML="Lee Kau Yan Memorial School is going to hold their Sports Day in the following 2 days at the WanChai Sports Ground on number 20 Tonnochy Road. There are going to be 6 to 7 distinct sporting activities inside and around the oval including long jump, high jump, shot put, discus and javelin; and several different running events, possibly more than 12, including a student-teacher teams' relay on 400 meters. So be sure to claim your prize in the skill you have to show you have a healthy body as well as a sound mind.";
+	document.all("text3").innerHTML="The United Nations meets again with political leaders from around the globe coming together to the eighty-first meeting in New York last week. Issues they discuss include the wars in Iran and Ukraine, ''South China'' Sea, and even the dangers of ''A.I.''.";
+	document.all("text4").innerHTML="The Bayeux Tapestry returns to England. It is a huge decorated cloth that tells the story of how William the Conqueror came to rule England in year 1066 almost one thousand years ago. Since then, this is the first time the tapestry has been brought back to UK and special steps were taken to make sure the artwork was safe in transport from France.";
+
+	//document.all("text5").innerHTML="Advertisement ...";
 	// That's all for today...
-/*	document.all("text5").innerHTML="";
-	document.all("text6").innerHTML="";
+/*	document.all("text6").innerHTML="";
 	document.all("text7").innerHTML="";
 	document.all("text8").innerHTML="";
 	document.all("text9").innerHTML="";
