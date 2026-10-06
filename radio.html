@@ -51,10 +51,6 @@
 		if(a==4){
 			document.all("backgm3").play();
 		}
-		if(a==7){
-			//document.all("backgm7").play();
-			document.all("mediasfx"+a).volume=0.3;
-		}
 		if(a==5){
 			document.all("mediasfx"+a).volume=0.35;
 		}
@@ -69,7 +65,7 @@
 					if(a!=4 || audios[i].id!="backgm3") audios[i].currentTime=0;
 			}
 //		}
-		for (var i = 9; i >= 1; i--) {
+		for (var i = 8; i >= 1; i--) {
 			//ob=document.all("mediasfx"+i); ob.pause(); ob.currentTime=0; 
 			document.all("waitb"+i).hidden=true;
 			document.all("line"+i).style.color="silver";
@@ -119,10 +115,10 @@
 	<i style="color:red">Dj2:</i><br>
 	<button id="btn3" onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" loop hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
-									Good morning, I'm <i>DJ ______</i>. <span id="text1"></span>
+									Good morning, I'm <i>DJ ______</i> <span id="text1"></span>
 								</span>
 	<button id="btn4" onclick="playbutton(4,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx4" src="radio_weather_thunder.wav" onplay='this.volume=1;' hidden>Audio not supported!</audio>
@@ -147,37 +143,21 @@
 								<img id="waitb6" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line6">
 									<hr>
-									
 									<i style="color:red">Dj1:</i><br>
 									In other news: <span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,15000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano)+music_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
-		<!--audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.25;" hidden>Audio not supported!</audio-->
+	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<hr>
-								Bobby's advertisement:<br>
 								<span id="line7">
-									<span id="text5">
-
-										<i style="color:red">Bobby:</i> I strongly recommend you to buy the ''Mobile power supply''. If you have it, you will never worry about the mobile power when going out, and it's convenient! For instance, you can buy it at any school tuckshop for just 50 dollars, and it can charge your device up to 80 percent in 20 minutes. You will never have to worry about a dead phone battery on the way home. And then, it's also ultra-light and fits right in your pocket.<br>
-										<i style="color:red">Nicole:</i> Go buy the ''Mobile power supply'' now!<br>
-
-									</span>
-								</span>
-	<button id="btn7" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx8" src="radio_advert_music_end_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
-								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line8">
 									<hr>
-									
 									<i style="color:red">Dj2:</i><br>
 									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
 								</span>
-	<button id="btn8" onclick="playbutton(9,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx9" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
-								<img id="waitb9" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line9"></span>
+	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line8"></span>
 	<hr>
 	</b>
 	<br><br><br><br><br>
@@ -212,15 +192,15 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML="So, despite what the Hong Kong Observatory said last week, we got quite a shower this weekend! Apparently the ''monsoon'' is back, and they are now saying that upper-air disturbances will bring more rain instead of fine weather to the coast of Hong Kong.";
-	document.all("text2").innerHTML="Yes, the observatory should improve the accuracy of their predictions because we are also hoping for them to be right about finally cooler temperatures in the next couple of days. It has been really hot last week, and now the minimum temperature is forecast to fall around 23 degrees Celsius, especially at night when the difference between day and night time will be noticeable.";
+	document.all("text1").innerHTML="So, it really did get cooler yesterday, and there wasn't too much rain either. The relative humidity in Hong Kong fell to around 60 percent, and it is going to stay cool at around 23 degrees Celsius in urban areas, and a couple of degrees lower in the New Territories, especially at night.";
+	document.all("text2").innerHTML="The maximum temperature during the day will be around 30 degrees Celsius, with moderate north to northeasterly wind. The winds will pick up on Thursday, as well as the temperature in the latter part of this week, but the difference between night and day will be relatively large over inland areas.";
 	// Now on to the news...
-	document.all("text3").innerHTML="The United Nations meets again with political leaders from around the globe coming together to the eighty-first meeting in New York last week. Issues they discuss include the wars in Iran and Ukraine, ''South China'' Sea, and even the dangers of ''A.I.''.";
-	document.all("text4").innerHTML="The Bayeux Tapestry returns to England. It is a huge decorated cloth that tells the story of how William the Conqueror came to rule England in year 1066 almost one thousand years ago. Since then, this is the first time the tapestry has been brought back to UK and special steps were taken to make sure the artwork was safe in transport from France.";
-
-	//document.all("text5").innerHTML="Advertisement ...";
+	document.all("text3").innerHTML="Important elections are coming up in Brazil and Spain. In Brazil, a special run-off election will decide between two very different candidates for president. And Spain's prime minister is moving up the next election in response to public anger over the rising costs of housing.";
+	// In other news:
+	document.all("text4").innerHTML="A museum in Rotterdam, Netherlands recently covered the floor in one of its large viewing rooms with 800 pounds of peanut butter. This unusual display honors the famous Dutch artist Wim T. Schippers. He passed away at the age of 83, but his strange and funny ideas continue to surprise people.";
 	// That's all for today...
-/*	document.all("text6").innerHTML="";
+/*	document.all("text5").innerHTML="";
+	document.all("text6").innerHTML="";
 	document.all("text7").innerHTML="";
 	document.all("text8").innerHTML="";
 	document.all("text9").innerHTML="";
