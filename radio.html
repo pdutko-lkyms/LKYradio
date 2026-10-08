@@ -51,6 +51,10 @@
 		if(a==4){
 			document.all("backgm3").play();
 		}
+		if(a==7){
+			//document.all("backgm7").play();
+			document.all("mediasfx"+a).volume=0.3;
+		}
 		if(a==5){
 			document.all("mediasfx"+a).volume=0.35;
 		}
@@ -65,7 +69,7 @@
 					if(a!=4 || audios[i].id!="backgm3") audios[i].currentTime=0;
 			}
 //		}
-		for (var i = 8; i >= 1; i--) {
+		for (var i = 9; i >= 1; i--) {
 			//ob=document.all("mediasfx"+i); ob.pause(); ob.currentTime=0; 
 			document.all("waitb"+i).hidden=true;
 			document.all("line"+i).style.color="silver";
@@ -115,7 +119,7 @@
 	<i style="color:red">Dj2:</i><br>
 	<button id="btn3" onclick="playbutton(3,2000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
 	<audio controls id="mediasfx3" src="radio_weather_thunder.wav" onplay='this.volume=1;document.all("backgm3").play();' hidden>Audio not supported!</audio>
-		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" hidden>Audio not supported!</audio>
+		<audio controls id="backgm3" src="radio_weather_music_(Triumph).mp3" onplay="this.volume=0.35;" loop hidden>Audio not supported!</audio>
 								<img id="waitb3" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line3">
 									Good morning, I'm <i>DJ ______</i>. <span id="text1"></span>
@@ -135,7 +139,7 @@
 								<img id="waitb5" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line5">
 									<hr>
-									<i style="color:red">Dj2:</i><br>
+									<i style="color:red">Dj2:</i><br>									
 									<span id="text3"></span>
 								</span>
 	<button id="btn6" onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
@@ -146,18 +150,36 @@
 									<i style="color:red">Dj1:</i><br>
 									In other news: <span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+	<button id="btn7" onclick="playbutton(7,15000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano)+music_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+		<!--audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.25;" hidden>Audio not supported!</audio-->
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<hr>
+								<b style="color:green">Moie's ADVERTISEMENT:</b><br>
 								<span id="line7">
+									<span id="text5">
+
+										<i style="color:red">Moie:</i> Our second-hand book sale is the best choice for students to buy cheap and useful books!<br>
+										<i style="color:red">Oscar:</i> It is because these books are well-kept and cover different subjects. You can save lots of money and protect the environment at the same time by reusing books.<br>
+										<i style="color:red">Moie:</i> For example, you can find storybooks, revision guides, and English readers at half price. Many students have found their favorite books here.<br>
+										<i style="color:red">Oscar:</i> Don't miss our second-hand book sale!<br>
+										<i style="color:red">Moie:</i> Come and get your great books this Friday!<br>
+
+									</span>
+								</span>
+	<button id="btn7" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx8" src="radio_advert_music_end_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line8">
 									<hr>
+									
 									<i style="color:red">Dj2:</i><br>
 									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
 								</span>
-	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
-								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line8"></span>
+	<button id="btn8" onclick="playbutton(9,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx9" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+								<img id="waitb9" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line9"></span>
 	<hr>
 	</b>
 	<br><br><br><br><br>
@@ -192,15 +214,16 @@
 	var timedisplayobject=document.all("timedisplayobject");
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Good morning, I'm DJ ______
-	document.all("text1").innerHTML="Dry, northeast monsoon is bringing generally fine weather to the coast of Hong Kong. The relative humidity has dropped further to 50 percent and the minimum temperature is about 24 degrees Celsius.";
-	document.all("text2").innerHTML="The maximum temperature will be around 29 degrees Celsius during the day, and moderate east-northeasterly winds may be strong offshore and on high ground. The temperature difference between night and day is expected to increase.";
+	document.all("text1").innerHTML="The northeast monsoon keeps banding clouds over the northern part of the sea. The minimum temperature will be about 26 degrees Celsius with the weather mainly fine and dry.";
+	document.all("text2").innerHTML="The maximum temperature will be around 30 degrees Celsius at the peak of the day, but the difference at night will grow larger. Moderate east-north-easterly winds may be strong offshore.";
 	// Now on to the news...
-	document.all("text3").innerHTML="Thousands of students across France are protesting to demand better schools. President Emmanuel Macron is trying to repair the economy damaged by a flood of cheap imports, but it has caused crowded classrooms, broken equipment, and a lack of teachers. Many students also feel that the school system is unfair.<br><i style='color:red'>Dj1:</i><br>They probably failed their exams, huh? ;-)";
+	document.all("text3").innerHTML="Spain defeated Argentina to win the 2026 FIFA World Cup. The Spanish team had two only 19-year-old players including Lamine Yamal. On the other side was Argentinian Leo Messi who is 39, and this was likely his final World Cup match.";
 	// In other news:
-	document.all("text4").innerHTML="The USA women's basketball team defeated France on Sunday to win its fifth FIBA Women's Basketball World Cup in a row. Though France led the game early by as much as 14 points, the young American team fought back and won the title.";
+	document.all("text4").innerHTML="In late September there was a huge international chess tournament in Uzbekistan, and an 11-year-old Bodhana Sivanandan from England made history. Her strong performance in the contest led to her becoming the youngest person ever to earn the chess title of 'woman grandmaster'.";
+
+	//document.all("text5").innerHTML="Advertisement ...";
 	// That's all for today...
-/*	document.all("text5").innerHTML="";
-	document.all("text6").innerHTML="";
+/*	document.all("text6").innerHTML="";
 	document.all("text7").innerHTML="";
 	document.all("text8").innerHTML="";
 	document.all("text9").innerHTML="";
