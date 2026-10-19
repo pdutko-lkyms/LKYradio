@@ -51,6 +51,10 @@
 		if(a==4){
 			document.all("backgm3").play();
 		}
+		if(a==7){
+			//document.all("backgm7").play();
+			document.all("mediasfx"+a).volume=0.3;
+		}
 		if(a==5){
 			document.all("mediasfx"+a).volume=0.35;
 		}
@@ -65,7 +69,7 @@
 					if(a!=4 || audios[i].id!="backgm3") audios[i].currentTime=0;
 			}
 //		}
-		for (var i = 8; i >= 1; i--) {
+		for (var i = 9; i >= 1; i--) {
 			//ob=document.all("mediasfx"+i); ob.pause(); ob.currentTime=0; 
 			document.all("waitb"+i).hidden=true;
 			document.all("line"+i).style.color="silver";
@@ -125,7 +129,7 @@
 								<img id="waitb4" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line4">
 									<hr>
-									<i style="color:red">Dj1: </i>
+									<i style="color:red">Dj1:</i><br>
 									<span id="text2"></span><br>
 									Now on to the news...
 								</span>
@@ -135,7 +139,7 @@
 								<img id="waitb5" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line5">
 									<hr>
-									<i style="color:red">Dj2:</i><br>
+									<i style="color:red">Dj2:</i><br>									
 									<span id="text3"></span>
 								</span>
 	<button id="btn6" onclick="playbutton(6,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
@@ -143,21 +147,34 @@
 								<img id="waitb6" src="radio_progressbar.gif" width=100 height=60 hidden>
 								<span id="line6">
 									<hr>
-									<i style="color:red">Dj1:</i><br>
-									In other news: <span id="text4"></span>
+										<span id="text4"></span>
 								</span>
-	<button id="btn7" onclick="playbutton(7,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx7" src="radio_news_music_end_(Enerider).mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+	<button id="btn7" onclick="playbutton(7,15000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx7" src="radio_advert_jingle_(piano)+music_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
+		<!--audio controls id="backgm7" src="radio_advert_music_(Bluegras).mp3" onplay="this.volume=0.25;" hidden>Audio not supported!</audio-->
 								<img id="waitb7" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<hr>
+								<b style="color:green">ADVERTISEMENT:</b><br>
 								<span id="line7">
-									<hr>
-									<i style="color:red">Dj2:</i><br>
-									That's all for today. We are English Ambassadors, thank you for listening and have a nice weekend, and don't forget: Tuesday next week is Day 2!
+									<span id="text5">
+
+										<i style="color:red">Max:</i> Are you having problems preparing for the exam? Use our new Treasure Plus textbook! It has all the vocabulary you need of Unit 1, and even some grammar exercises. It weighs less than a pound and it fits perfectly in a standard school bag. Use our textbook to prepare for the exam, and the teachers will never know!
+
+									</span>
 								</span>
-	<button id="btn8" onclick="playbutton(8,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
-	<audio controls id="mediasfx8" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+	<button id="btn8" onclick="playbutton(8,4000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx8" src="radio_advert_music_end_(Bluegras).mp3" onplay='this.volume=1;' hidden>Audio not supported!</audio>
 								<img id="waitb8" src="radio_progressbar.gif" width=100 height=60 hidden>
-								<span id="line8"></span>
+								<span id="line8">
+									<hr>
+									
+									<i style="color:red">Dj2:</i><br>
+									That's all for today. We are English Ambassadors, thank you for listening and have a nice day.
+								</span>
+	<button id="btn9" onclick="playbutton(9,10000);" style="width:80;height:80;font-size:50px"><b>&#x25B6</b></button>
+	<audio controls id="mediasfx9" src="radio_jingle_main.mp3" onplay="this.volume=0.8;" hidden>Audio not supported!</audio>
+								<img id="waitb9" src="radio_progressbar.gif" width=100 height=60 hidden>
+								<span id="line9"></span>
 	<hr>
 	</b>
 	<br><br><br><br><br>
@@ -193,18 +210,19 @@
 	timer1=setInterval(timer1ontimer,1000);timer1ontimer();
 	// Dj2:
 	// Good morning, I'm DJ ______.
-	document.all("text1").innerHTML="East airstream is affecting the coast of Hong Kong. The weather is mainly fine, which means dry, but not necessarily sunny. There will be sunny periods during the day and the temperature will range between 26 and 30 degrees Celsius. There may be some light rain <i>''here and there''</i>.";
+	document.all("text1").innerHTML="Under the influence of an anticyclone, the weather is mainly fine, but an east airstream is affecting the coast of Hong Kong. The maximum temperature is around 32 degrees Celsius, and the wind is moderate, west-bound.";
 	// Dj1:
-	document.all("text2").innerHTML="Is that really what the Hong Kong Observatory says?<br><i style='color:red'>Dj2:</i> More or less, YES, pretty much.<br><i style='color:red'>Dj1:</i> Their weather forecast is quite unclear, isn't it? The wording is almost exactly the same every day. Anyway, they say the weather will <i>remain</i> cloudy all the way thru the Chung Yeung Festival, and then it will be hot again next week.";
+	document.all("text2").innerHTML="The maximum UV Index for today is about 8, which means the intensity of UV radiation is ''very high''. The northeast monsoon is expected to affect Hong Kong later this week, and the tropical cyclone Champi is moving across the sea east of Philippines.";
 	// Now on to the news...
 	// Dj2:
-	document.all("text3").innerHTML="The fire drill at Lee Kau Yan Memorial School has been successful. Although it is not a competition, the total evacuation time was 10 minutes. That's not bad but as usual, there's always room for improvement.";
+	document.all("text3").innerHTML="The Uniform Test at Lee Kau Yan Memorial School is about to commence tomorrow at 8:20 am, starting with the usual: History, Geography, Math, ... even chinese language.<br><br><i style='color:red'>Dj1:</i> What do you think will be the most difficult part of the test?<br><br><i style='color:red'>Dj2:</i> I don't know, but the English tests aren't until later next week, especially in the Junior forms, so there's still plenty of time to prepare.<br><br><i style='color:red'>Dj1:</i> We have interviewed some of the local students to find out which part they worry about.";
 	// Dj1:
 	// In other news:
-	document.all("text4").innerHTML="Are you looking forward to the Chung Yeung Festival? It'll be on Monday and it's a public holiday, so: NO SCHOOL! It is actually very similar to the All Saints' Night that westerners and Christians celebrate on the 31st of October. You may actually know it as ''Halloween'', but we do not use or <i>'celebrate'</i> that name because it has become just a commercial party instead of a spiritual holiday.";
+	document.all("text4").innerHTML="<i style='color:red'>Hayden:</i> Hi, my name is Hayden. The most difficult word for me is the ''genre''. It means the type different movies that we learn in Form 3, and i still don't really understand the difference between science fiction and fantasy.<br><br><i style='color:red'>Eliana:</i> Hi, my name is Eliana. The stuff we learn in Form 1 is actually very easy - meeting friends and describing our family - i just imagine visiting my grandma who has Alzheimer's, and I'm pretty much set for the exam.";
+
+	//document.all("text5").innerHTML="Advertisement ...";
 	// That's all for today...
-/*	document.all("text5").innerHTML="";
-	document.all("text6").innerHTML="";
+/*	document.all("text6").innerHTML="";
 	document.all("text7").innerHTML="";
 	document.all("text8").innerHTML="";
 	document.all("text9").innerHTML="";
